@@ -1,6 +1,6 @@
 -- Create headquarters procedure
 create procedure createHeadquarters
-    @city varchar(40),
+    @city varchar(30),
     @country varchar(3),
     @creationDate date
     as
@@ -12,7 +12,7 @@ create procedure createHeadquarters
 --Update headquarters procedure
 create procedure updateHeadquarters
     @codeHeadquarters int,
-    @city varchar(40),
+    @city varchar(30),
     @country varchar(3),
     @creationDate date
     as
@@ -41,13 +41,13 @@ create procedure deleteHeadquarters
 
 --Procedure to create Pets
 create procedure createPet
-    @petName varchar(60),
+    @petName varchar(30),
     @specie int,
-    @petDescription varchar(60),
-    @breed varchar(60),
-    @condition varchar(60),
+    @petDescription varchar(30),
+    @breed varchar(30),
+    @condition varchar(30),
     @lastDate date,
-    @castrated varchar(60),
+    @castrated varchar(30),
     @photo image
     as
     begin
@@ -58,13 +58,13 @@ create procedure createPet
 --Procedure to update pet
 create procedure updatePet
     @idPet int,
-    @petName varchar(60),
+    @petName varchar(30),
     @specie int,
-    @petDescription varchar(60),
-    @breed varchar(60),
-    @condition varchar(60),
+    @petDescription varchar(30),
+    @breed varchar(30),
+    @condition varchar(30),
     @lastDate date,
-    @castrated varchar(60),
+    @castrated varchar(30),
     @photo image
     as
     begin
@@ -97,32 +97,38 @@ create procedure deletePet
 --procedure to create employees
 create procedure createEmployee
     @idEmployee int,
-    @fullName varchar(60),
-    @email varchar(60),
-    @city varchar(60),
+    @firstName varchar(30),
+    @middleName varchar(30),
+    @lastName varchar(30),
+    @email varchar(30),
+    @city varchar(30),
     @country varchar(3),
     @salary float,
-    @employeeType varchar(6)
+    @employeeType varchar(30)
     as
     begin
-        insert into Employee values (@idEmployee, @fullName, @email, @city, @country, @salary, @employeeType)
+        insert into Employee values (@idEmployee, @firstName, @middleName, @lastName, @email, @city, @country, @salary, @employeeType)
     end
 
 --Update Employee procedure
 create procedure updateEmployee
     @idEmployee int,
-    @fullName varchar(60),
-    @email varchar(60),
-    @city varchar(60),
+    @firstName varchar(30),
+    @middleName varchar(30),
+    @lastName varchar(30),
+    @email varchar(30),
+    @city varchar(30),
     @country varchar(3),
     @salary float,
-    @employeeType varchar(6)
+    @employeeType varchar(30)
     as
 	begin
 	SET NOCOUNT ON
 	UPDATE Employee
 	SET
-        fullName=@fullName,
+        firstName=@firstName,
+        middleName=@middleName,
+        lastName=@lastName
         email=@email,
         city=@city,
         country=@country,
@@ -146,4 +152,3 @@ create procedure deleteEmployee
 
 insert into Pet values('Fofo', 1, 'Pos un perro', 'French Poodle', 'Excellent', '2018/03/02', 'YES',
 'http://images.evisos.co.cr/2012/11/24/linda-cachorra-french-poodle-tacita-en-venta_fd904d2f0f_3.jpg')
-

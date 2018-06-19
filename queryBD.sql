@@ -1,7 +1,7 @@
 --Country table
 create table Country (
     idCountry varchar(3),
-    countryName varchar(40)
+    countryName varchar(30)
     primary key (idCountry)
     )
 --drop table Country
@@ -9,7 +9,7 @@ create table Country (
 --Headquarters table
 create table Headquarters(
     codeHeadquarters int identity(1,1),
-    city varchar(40),
+    city varchar(30),
     country varchar(3),
     creationDate date,
     primary key (codeHeadquarters),
@@ -22,14 +22,14 @@ create table Headquarters(
 --Employee table
 create table Employee(
     idEmployee int,
-    firstName varchar(60),
-    middleName varchar(60),
-    lastName varchar(60),
-    email varchar (60),
-    city varchar (60),
+    firstName varchar(30),
+    middleName varchar(30),
+    lastName varchar(30),
+    email varchar (30),
+    city varchar (30),
     country varchar(3),
     salary float,
-    employeeType varchar(60),
+    employeeType varchar(30),
     primary key (idEmployee),
     foreign key (country) references Country(idCountry)
 		on delete cascade
@@ -40,7 +40,7 @@ create table Employee(
 --Specie table
 create table Specie(
     idSpecie int,
-    specieName varchar(60)
+    specieName varchar(30)
     primary key (idSpecie)
     )
 --drop table Specie
@@ -49,9 +49,9 @@ create table Specie(
 create table AdoptionProposal(
     idAdoptionProposal int identity(1,1),
     initialDate date,
-    theme varchar(60),
-    adoptionDescription varchar(60),
-    adoptionStatus varchar(60),
+    theme varchar(30),
+    adoptionDescription varchar(30),
+    adoptionStatus varchar(30),
     lastDate date
     primary key (idAdoptionProposal)
 )
@@ -60,10 +60,10 @@ create table AdoptionProposal(
 --Client table
 create table Client(
     idClient int,
-    clientName varchar(60),
-    middleName varchar(60),
-    lastname varchar(60),
-    clientType varchar(60),
+    clientName varchar(30),
+    middleName varchar(30),
+    lastname varchar(30),
+    clientType varchar(30),
     photo image,
     primary key (idClient)
 )
@@ -72,13 +72,13 @@ create table Client(
 --Pet table
 create table Pet(
     idPet int identity(1,1),
-    petName varchar(60),
+    petName varchar(30),
     specie int,
-    petDescription varchar(60),
-    breed varchar(60),
-    condition varchar(60),
+    petDescription varchar(30),
+    breed varchar(30),
+    condition varchar(30),
     lastDate date,
-    castrated varchar(60),
+    castrated varchar(30),
     photo image
     primary key(idPet)
 )
