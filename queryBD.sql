@@ -22,7 +22,9 @@ create table Headquarters(
 --Employee table
 create table Employee(
     idEmployee int,
-    fullName varchar(60),
+    firstName varchar(60),
+    middleName varchar(60),
+    lastName varchar(60),
     email varchar (60),
     city varchar (60),
     country varchar(3),
@@ -78,7 +80,7 @@ create table Pet(
     lastDate date,
     castrated varchar(60),
     photo image
-    primary key(idPet)    
+    primary key(idPet)
 )
 --drop table Pet
 
@@ -223,6 +225,6 @@ insert into Country values ('URY', 'Uruguay')
 insert into Country values ('VEN', 'Venezuela')
 insert into Country values ('ZWE', 'Zimbabwe')
 
-insert into Headquarters values('Harare', 'ZWE', '2017/02/15') 
+insert into Headquarters values('Harare', 'ZWE', '2017/02/15')
 
 select * from Headquarters
